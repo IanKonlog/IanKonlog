@@ -17,10 +17,10 @@ A learning platform where you upload any material and turn it into mastery.
 
 [Website](https://try.hemle.app)
 
-#### [REIT-BUILDER](https://github.com/IanKonlog/REIT-BUILDER)
-A tool for modeling and analyzing real estate investment opportunities.
+#### [REIT-BUILDER](https://reit-builder.web.app/)
+A training platform that teaches students how to model and evaluate real estate investment trusts (REITs).
 
-[Source](https://github.com/IanKonlog/REIT-BUILDER)
+[Website](https://reit-builder.web.app/) · [Source](https://github.com/IanKonlog/REIT-BUILDER)
 
 #### [drones-Ecommerce](https://github.com/IanKonlog/drones-Ecommerce)
 An e-commerce platform concept built around drone delivery.
