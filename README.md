@@ -18,7 +18,7 @@ A learning platform where you upload any material and turn it into mastery.
 [Website](https://try.hemle.app)
 
 #### [REIT-BUILDER](https://reit-builder.web.app/)
-A training platform that teaches students how to model and evaluate real estate investment trusts (REITs).
+A training platform for practicing requirements elicitation interviews, built for students learning requirements engineering.
 
 [Website](https://reit-builder.web.app/) · [Source](https://github.com/IanKonlog/REIT-BUILDER)
 
