@@ -12,11 +12,6 @@
 
 ### What I'm building
 
-#### [Hemle](https://try.hemle.app) — *Upload anything. Master everything.*
-A learning platform where you upload any material and turn it into mastery.
-
-[Website](https://try.hemle.app)
-
 #### [REIT-BUILDER](https://reit-builder.web.app/)
 A training platform for practicing requirements elicitation interviews, built for students learning requirements engineering.
 
