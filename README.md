@@ -53,6 +53,8 @@ A recipe discovery and management app.
 
 ![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
 ![AI Agents](https://img.shields.io/badge/AI_Agents-5A4FCF?style=flat)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=flat&logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-412991?style=flat&logo=openai&logoColor=white)
 
 ---
 
