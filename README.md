@@ -2,7 +2,9 @@
 
 # Roger Ian Konlog
 
-### Software & AI Engineer building cloud-native tools and AI agent systems
+### Software & AI Engineer
+
+I ship full-stack products with AI coding agents, and build tools that make those agents more reliable.
 
 ![Profile views](https://komarev.com/ghpvc/?username=IanKonlog&style=flat&color=blue)
 
@@ -12,20 +14,21 @@
 
 ### What I'm building
 
+#### [Hemle](https://try.hemle.app) — *AI tutor for your textbook chapters*
+Drop in the chapter you're studying. Hemle teaches it in short sessions, quizzes you, and cites the page as it goes.
+
+I build it end to end: a Kotlin/Spring Boot API, a React web app, an Expo mobile app, and a Python document pipeline. 2,500+ commits since mid-2025, all in private repos.
+
+[Try Hemle](https://try.hemle.app)
+
+**Next:** open-sourcing the tools I use to work with Codex and Claude Code.
+
+### Earlier work
+
 #### [REIT-BUILDER](https://reit-builder.web.app/)
 A training platform for practicing requirements elicitation interviews, built for students learning requirements engineering.
 
 [Website](https://reit-builder.web.app/) · [Source](https://github.com/IanKonlog/REIT-BUILDER)
-
-#### [drones-Ecommerce](https://github.com/IanKonlog/drones-Ecommerce)
-An e-commerce platform concept built around drone delivery.
-
-[Source](https://github.com/IanKonlog/drones-Ecommerce)
-
-#### [food-recipe](https://github.com/IanKonlog/food-recipe)
-A recipe discovery and management app.
-
-[Source](https://github.com/IanKonlog/food-recipe)
 
 ---
 
@@ -42,6 +45,11 @@ A recipe discovery and management app.
 **Frameworks & Cloud**
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+![Expo](https://img.shields.io/badge/Expo-000020?style=flat&logo=expo&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
 
 **AI & Agents**
