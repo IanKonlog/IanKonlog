@@ -14,10 +14,8 @@ I ship full-stack products with AI coding agents, and build tools that make thos
 
 ### What I'm building
 
-#### [Hemle](https://try.hemle.app) — *AI tutor for your textbook chapters*
+#### [Hemle](https://try.hemle.app) — *AI tutor for your exams*
 Drop in the chapter you're studying. Hemle teaches it in short sessions, quizzes you, and cites the page as it goes.
-
-I build it end to end: a Kotlin/Spring Boot API, a React web app, an Expo mobile app, and a Python document pipeline. 2,500+ commits since mid-2025, all in private repos.
 
 [Try Hemle](https://try.hemle.app)
 
