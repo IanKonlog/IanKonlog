@@ -61,5 +61,9 @@ I'm working on tools that let developers check what coding agents claim against 
 ### Activity
 
 <p align="center">
+  <img src="./isocalendar.svg" alt="Isometric calendar of IanKonlog's GitHub contributions" />
+</p>
+
+<p align="center">
   <img src="./github-metrics.svg" alt="GitHub activity metrics" />
 </p>
