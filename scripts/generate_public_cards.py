@@ -10,6 +10,8 @@ from pathlib import Path
 import json
 import os
 import re
+import subprocess
+import tempfile
 import urllib.parse
 import urllib.request
 from xml.sax.saxutils import escape
@@ -27,6 +29,16 @@ COLORS = {
     "CSS": "#563d7c",
     "Shell": "#89e051",
     "Dockerfile": "#384d54",
+}
+SOURCE_SUFFIXES = {
+    ".bash", ".c", ".cc", ".cpp", ".cs", ".css", ".go", ".h", ".hpp",
+    ".html", ".java", ".js", ".jsx", ".kt", ".kts", ".php", ".py",
+    ".rb", ".rs", ".scss", ".sh", ".sql", ".svelte", ".swift",
+    ".ts", ".tsx", ".vue",
+}
+SKIPPED_DIRECTORIES = {
+    ".git", ".next", ".venv", "__pycache__", "build", "coverage", "dist",
+    "generated", "node_modules", "out", "target", "vendor",
 }
 
 
@@ -83,6 +95,55 @@ def annual_contributions() -> int:
     return int(unescape(match.group(1)).replace(",", ""))
 
 
+def is_source_file(name: str) -> bool:
+    path = Path(name)
+    if any(part.lower() in SKIPPED_DIRECTORIES for part in path.parts):
+        return False
+    if path.name.endswith((".min.js", ".min.css", ".generated.ts", ".generated.js")):
+        return False
+    return path.suffix.lower() in SOURCE_SUFFIXES or path.name in {"Dockerfile", "Makefile"}
+
+
+def public_code_lines(repositories: list[dict]) -> tuple[int, int, int]:
+    """Count current nonblank source lines and historical source-line changes."""
+    current = added = removed = 0
+    with tempfile.TemporaryDirectory(prefix="public-profile-code-") as directory:
+        for repo in repositories:
+            name = repo["name"]
+            location = Path(directory) / name
+            url = f"https://github.com/{USER}/{urllib.parse.quote(name)}.git"
+            subprocess.run(["git", "clone", "--quiet", "--no-tags", url, str(location)], check=True, timeout=180)
+
+            tracked = subprocess.check_output(["git", "-C", str(location), "ls-files", "-z"])
+            for raw_name in tracked.split(b"\0"):
+                if not raw_name:
+                    continue
+                filename = os.fsdecode(raw_name)
+                if not is_source_file(filename):
+                    continue
+                source = location / filename
+                if source.is_symlink() or not source.is_file() or source.stat().st_size > 1_000_000:
+                    continue
+                data = source.read_bytes()
+                if b"\0" in data:
+                    continue
+                current += sum(bool(line.strip()) for line in data.splitlines())
+
+            history = subprocess.check_output(
+                ["git", "-C", str(location), "log", "--no-merges", "--numstat", "--format="],
+                text=True, errors="replace", timeout=120,
+            )
+            for line in history.splitlines():
+                fields = line.split("\t", 2)
+                if len(fields) != 3 or not fields[0].isdigit() or not fields[1].isdigit():
+                    continue
+                filename = fields[2].rsplit(" => ", 1)[-1].replace("}", "")
+                if is_source_file(filename):
+                    added += int(fields[0])
+                    removed += int(fields[1])
+    return current, added, removed
+
+
 def svg_styles() -> str:
     return """<style>
       text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #57606a; }
@@ -103,7 +164,10 @@ def svg_styles() -> str:
     </style>"""
 
 
-def render_stats(user: dict, repos: list[dict], stars_given: int, contributions: int, prs: int, issues: int) -> str:
+def render_stats(
+    user: dict, repos: list[dict], stars_given: int, contributions: int,
+    prs: int, issues: int, code_lines: tuple[int, int, int],
+) -> str:
     original = [repo for repo in repos if not repo["fork"]]
     years = date.today().year - datetime.fromisoformat(user["created_at"].replace("Z", "+00:00")).year
     anniversary = date.fromisoformat(user["created_at"][:10])
@@ -113,9 +177,9 @@ def render_stats(user: dict, repos: list[dict], stars_given: int, contributions:
         return f'<text class="row" x="{x}" y="{y}"><tspan class="value">{escape(value)}</tspan> {escape(label)}</text>'
 
     parts = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="326" viewBox="0 0 480 326" role="img" aria-label="Public GitHub profile statistics">',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="414" viewBox="0 0 480 414" role="img" aria-label="Public GitHub profile statistics">',
         svg_styles(),
-        '<rect class="surface" x="0.5" y="0.5" width="479" height="325" rx="10" />',
+        '<rect class="surface" x="0.5" y="0.5" width="479" height="413" rx="10" />',
         '<text class="title" x="18" y="30">Roger Ian Konlog</text>',
         f'<text class="note" x="18" y="49">On GitHub for {years} years · Public profile data</text>',
         '<line class="rule" x1="18" y1="62" x2="462" y2="62" />',
@@ -134,8 +198,13 @@ def render_stats(user: dict, repos: list[dict], stars_given: int, contributions:
         row(18, 259, f"{len(repos) - len(original):,}", "forks"),
         row(250, 259, f"{sum(repo['stargazers_count'] for repo in original):,}", "stars earned"),
         '<line class="rule" x1="18" y1="278" x2="462" y2="278" />',
-        '<text class="note" x="18" y="299">Repository and issue counts use public data only.</text>',
-        '<text class="note" x="18" y="315">Contributions match GitHub’s public profile total.</text>',
+        '<text class="heading" x="18" y="305">Lines of code</text>',
+        row(18, 332, f"{code_lines[0]:,}", "nonblank source lines"),
+        row(18, 356, f"{code_lines[1]:,}", "lines added"),
+        row(250, 356, f"{code_lines[2]:,}", "lines removed"),
+        '<line class="rule" x1="18" y1="373" x2="462" y2="373" />',
+        '<text class="note" x="18" y="393">Source lines are current; changes span Git history.</text>',
+        '<text class="note" x="18" y="407">Only original public repositories are counted.</text>',
     ]
     parts.append('</svg>')
     return "\n".join(parts) + "\n"
@@ -189,6 +258,7 @@ def main() -> None:
     stats = render_stats(
         user, repos, starred_count(), annual_contributions(),
         public_issue_count("pr"), public_issue_count("issue"),
+        public_code_lines(original),
     )
     (ROOT / "github-metrics.svg").write_text(stats, encoding="utf-8")
     (ROOT / "languages.svg").write_text(render_languages(languages, len(original)), encoding="utf-8")
