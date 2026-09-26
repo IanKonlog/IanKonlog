@@ -19,8 +19,6 @@ Drop in the chapter you're studying. Hemle teaches it in short sessions, quizzes
 
 [Try Hemle](https://try.hemle.app)
 
-**Next:** open-sourcing the tools I use to work with Codex and Claude Code.
-
 #### [SuperMovie](https://github.com/IanKonlog/SuperMe) — *fun productivity, self-hosted*
 A Netflix-flavored tracker for movies, series, and books — watch history calendar, goals, tags, and a Spotify-Wrapped-style year story you can share with a link.
 
