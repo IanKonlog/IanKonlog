@@ -1,75 +1,29 @@
-<div align="center">
-
 # Roger Ian Konlog
 
-### Software & AI Engineer
+I build AI products and reliable backend systems. My current focus is tooling that makes coding-agent work easier to verify.
 
-I ship full-stack products with AI coding agents, and build tools that make those agents more reliable.
+## Selected work
 
-![Profile views](https://komarev.com/ghpvc/?username=IanKonlog&style=flat&color=blue)
+### [Hemle](https://try.hemle.app) · AI learning platform
 
-</div>
-
----
-
-### What I'm building
-
-#### [Hemle](https://try.hemle.app) — *AI tutor for your exams*
-Drop in the chapter you're studying. Hemle teaches it in short sessions, quizzes you, and cites the page as it goes.
+Hemle helps students study their own material with guided tutoring, short practice sessions, and citations back to the source.
 
 [Try Hemle](https://try.hemle.app)
 
-#### [SuperMovie](https://github.com/IanKonlog/SuperMe) — *fun productivity, self-hosted*
-A Netflix-flavored tracker for movies, series, and books — watch history calendar, goals, tags, and a Spotify-Wrapped-style year story you can share with a link.
+### [SuperMovie](https://github.com/IanKonlog/SuperMovie) · self-hosted media tracker
 
-[Source](https://github.com/IanKonlog/SuperMe)
+A personal movie, series, and book tracker with a watch calendar, goals, and a shareable year-in-review. It runs as a single-user Next.js and PostgreSQL app with Docker Compose, private Tailscale access, and documented backups.
 
-### Earlier work
+[Source and setup](https://github.com/IanKonlog/SuperMovie)
 
-#### [REIT-BUILDER](https://reit-builder.web.app/)
-A training platform for practicing requirements elicitation interviews, built for students learning requirements engineering.
+## Current focus
 
-[Website](https://reit-builder.web.app/) · [Source](https://github.com/IanKonlog/REIT-BUILDER)
+I'm building tools that check what coding agents claim, change, and cost. I want their output to come with evidence a developer can inspect.
 
----
+## Tools I use
 
-### Tech I reach for
+Kotlin · Java · Spring Boot · Python · TypeScript · Next.js · PostgreSQL · Docker
 
-**Languages**
+## Activity
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
-
-**Frameworks & Cloud**
-
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
-![Expo](https://img.shields.io/badge/Expo-000020?style=flat&logo=expo&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
-
-**AI & Agents**
-
-![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
-![AI Agents](https://img.shields.io/badge/AI_Agents-5A4FCF?style=flat)
-![Claude](https://img.shields.io/badge/Claude-D97757?style=flat&logo=anthropic&logoColor=white)
-![Codex](https://img.shields.io/badge/Codex-412991?style=flat&logo=openai&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat&logo=langchain&logoColor=white)
-![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-425CC7?style=flat&logo=opentelemetry&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat&logo=googlegemini&logoColor=white)
-
----
-
-### Stats
-
-<div align="center">
-
-<img src="./github-metrics.svg" alt="GitHub metrics" />
-
-</div>
+<img src="./github-metrics.svg" alt="GitHub activity metrics" />
