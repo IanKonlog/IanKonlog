@@ -9,10 +9,17 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      # Use the repository-scoped token for public profile statistics.
+      - name: Profile statistics
+        uses: lowlighter/metrics@v3.34
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: header, activity
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: IanKonlog
+          filename: github-metrics.svg
+          base: header, activity, community, repositories
+          repositories_affiliations: owner
+          config_display: large
+          config_timezone: America/New_York
       - name: Contribution calendar
         uses: lowlighter/metrics@v3.34
         with:
@@ -22,3 +29,14 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           config_timezone: America/New_York
+      # GITHUB_TOKEN can read this profile repo and public repositories only.
+      - name: Public repository languages
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: IanKonlog
+          filename: languages.svg
+          base: ""
+          plugin_languages: yes
+          plugin_languages_limit: 8
+          plugin_languages_details: percentage
