@@ -21,16 +21,16 @@
 <text class="note" x="18" y="46">By code size across 3 original repositories</text>
 <defs><clipPath id="bar"><rect x="18" y="61" width="444" height="14" rx="7" /></clipPath></defs>
 <g clip-path="url(#bar)">
-<rect x="18.00" y="61" width="388.41" height="14" fill="#3178c6" />
-<rect x="406.40" y="61" width="31.16" height="14" fill="#3572a5" />
-<rect x="437.55" y="61" width="15.26" height="14" fill="#f1e05a" />
-<rect x="452.79" y="61" width="4.94" height="14" fill="#563d7c" />
-<rect x="457.72" y="61" width="1.87" height="14" fill="#e34c26" />
-<rect x="459.58" y="61" width="1.45" height="14" fill="#89e051" />
+<rect x="18.00" y="61" width="388.56" height="14" fill="#3178c6" />
+<rect x="406.55" y="61" width="31.07" height="14" fill="#3572a5" />
+<rect x="437.61" y="61" width="15.22" height="14" fill="#f1e05a" />
+<rect x="452.82" y="61" width="4.93" height="14" fill="#563d7c" />
+<rect x="457.73" y="61" width="1.86" height="14" fill="#e34c26" />
+<rect x="459.58" y="61" width="1.44" height="14" fill="#89e051" />
 <rect x="461.02" y="61" width="0.99" height="14" fill="#8b949e" />
 </g>
 <circle cx="24" cy="96" r="5" fill="#3178c6" />
-<text class="row" x="36" y="101">TypeScript 87%</text>
+<text class="row" x="36" y="101">TypeScript 88%</text>
 <circle cx="249" cy="96" r="5" fill="#3572a5" />
 <text class="row" x="261" y="101">Python 7%</text>
 <circle cx="24" cy="119" r="5" fill="#f1e05a" />
