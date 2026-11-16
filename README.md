@@ -20,9 +20,19 @@
 
 #### [Hemle](https://try.hemle.app) — *study from your own material*
 
+
+
+
+
+
+
+
 Hemle helps students learn from their own study material through guided tutoring, short practice sessions, and citations they can follow back to the source.
 
 [Try the app](https://try.hemle.app)
+
+https://github.com/user-attachments/assets/3ff2722a-4f7d-48fa-aa11-9a682d8d1e3b
+
 
 #### [SuperMovie](https://github.com/IanKonlog/SuperMovie) — *your media history, on your own server*
 
