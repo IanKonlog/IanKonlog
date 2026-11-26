@@ -7,6 +7,7 @@
 
 <p align="center">
   <a href="https://try.hemle.app"><img alt="Hemle: try the app" src="https://img.shields.io/badge/Hemle-Try_the_app-5856D6?style=flat-square" /></a>
+  <a href="https://celly.day/"><img alt="Celly: digital gifts" src="https://img.shields.io/badge/Celly-Digital_gifts-e96b61?style=flat-square" /></a>
   <a href="https://github.com/IanKonlog/SuperMovie"><img alt="SuperMovie: view the source" src="https://img.shields.io/badge/SuperMovie-View_source-1F2937?style=flat-square" /></a>
 </p>
 
@@ -32,6 +33,12 @@ Hemle helps students learn from their own study material through guided tutoring
 [Try the app](https://try.hemle.app)
 
 https://github.com/user-attachments/assets/3ff2722a-4f7d-48fa-aa11-9a682d8d1e3b
+
+#### [Celly](https://celly.day/) — *a personal gift, timed for their moment*
+
+Turn your places, photos, and a letter into a digital gift, sealed until the time you choose and opened on the recipient’s phone.
+
+[Visit Celly](https://celly.day/)
 
 
 #### [SuperMovie](https://github.com/IanKonlog/SuperMovie) — *your media history, on your own server*
